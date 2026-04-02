@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLAMRDiP - Colour Palette & Typography</title>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-soft: #F3EDF5;
+    --white: #FFFFFF;
+    --lavender-light: #E8D6F0;
+    --lavender: #C9A2D8;
+    --lilac: #B88CC8;
+    --purple-mid: #9B6DB5;
+    --purple-brand: #7B4FA0;
+    --purple-deep: #5E2D82;
+    --purple-dark: #3D1560;
+    --violet-accent: #6B1FA8;
+    --pink-soft: #F0D6EF;
+    --pink-packaging: #E8C4E8;
+    --text-dark: #1A0A26;
+    --text-mid: #4A2D5E;
+    --text-light: #8A6FA0;
+    --grey-warm: #7A7078;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Sofia Sans', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 32px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+  .header h1 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--purple-brand);
+    margin-bottom: 12px;
+  }
+  .header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--purple-deep);
+    line-height: 1.1;
+  }
+  .header p {
+    margin-top: 16px;
+    font-size: 16px;
+    color: var(--text-light);
+    font-weight: 400;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Section Titles */
+  .section-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--purple-brand);
+    margin-bottom: 28px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--lavender);
+  }
+
+  /* Colour Palette */
+  .palette-section { margin-bottom: 72px; }
+
+  .palette-group-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-mid);
+    margin-bottom: 14px;
+    margin-top: 28px;
+  }
+  .palette-group-label:first-of-type { margin-top: 0; }
+
+  .colour-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .colour-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(90, 40, 120, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .colour-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(90, 40, 120, 0.12);
+  }
+
+  .colour-swatch {
+    height: 100px;
+    width: 100%;
+  }
+
+  .colour-info {
+    padding: 14px 16px;
+  }
+  .colour-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+  .colour-hex {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-light);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Typography Section */
+  .type-section { margin-bottom: 72px; }
+
+  .type-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 2px 8px rgba(90, 40, 120, 0.06);
+    margin-bottom: 24px;
+  }
+
+  .type-specimen {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--lavender-light);
+  }
+  .type-specimen:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .type-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--purple-brand);
+    margin-bottom: 8px;
+  }
+
+  .type-meta {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  .type-display {
+    font-family: 'Sofia Sans', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.15;
+  }
+
+  .type-h1 { font-size: 56px; font-weight: 800; }
+  .type-h2 { font-size: 42px; font-weight: 700; }
+  .type-h3 { font-size: 28px; font-weight: 600; }
+  .type-sub { font-size: 18px; font-weight: 500; color: var(--text-mid); line-height: 1.4; }
+  .type-body { font-size: 16px; font-weight: 400; color: var(--text-mid); line-height: 1.65; max-width: 600px; }
+  .type-small { font-size: 13px; font-weight: 400; color: var(--text-light); line-height: 1.5; }
+  .type-caps {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--purple-brand);
+  }
+
+  /* Weight Scale */
+  .weight-scale {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .weight-item {
+    text-align: center;
+  }
+  .weight-preview {
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: 36px;
+    color: var(--purple-deep);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .weight-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-mid);
+    margin-bottom: 2px;
+  }
+  .weight-value {
+    font-size: 11px;
+    color: var(--text-light);
+  }
+
+  /* Usage Notes */
+  .usage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 24px;
+  }
+  @media (max-width: 640px) {
+    .usage-grid { grid-template-columns: 1fr; }
+  }
+
+  .usage-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(90, 40, 120, 0.06);
+  }
+  .usage-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--purple-deep);
+    margin-bottom: 8px;
+  }
+  .usage-card p {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.55;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid var(--lavender-light);
+    font-size: 12px;
+    color: var(--text-light);
+  }
+
+  /* Note about Sofia Pro */
+  .font-note {
+    background: linear-gradient(135deg, var(--purple-deep), var(--violet-accent));
+    color: white;
+    border-radius: 12px;
+    padding: 20px 28px;
+    margin-bottom: 32px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .font-note strong { font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>GLAMRDiP</h1>
+    <h2>Colour Palette &<br>Typography Guidelines</h2>
+    <p>Brand colour system and typographic scale derived from product packaging and visual identity.</p>
+  </div>
+
+  <!-- Colour Palette -->
+  <div class="palette-section">
+    <div class="section-title">Colour Palette</div>
+
+    <div class="palette-group-label">Primary - Core Purple Range</div>
+    <div class="colour-row">
+      <div class="colour-card">
+        <div class="colour-swatch" style="background: #7B4FA0;"></div>
+        <div class="colour-info">
+          <div class="colour-name">Purple Brand</div>
+          <div class="colour-hex">#7B4FA0</div>
+        </div>
+      </div>
+      <div class="colour-card">
+        <div class="colour-swatch" style="background: #5E2D82;"></div>
+        <div class="colour-info">
+          <div class="colour-name">Purple Deep</div>
+          <div class="colour-hex">#5E2D82</div>
+        </div>
+      </div>
+      <div class="colour-card">
+        <div class="colour-swatch" style="background: #3D1560;"></div>
+        <div class="colour-info">
+          <div class="colour-name">Purple Dark</div>
+          <div class="colour-hex">#3D1560</div>
+        </div>
+      </div>
+      <div class="colour-card">
+        <div class="colour-swatch" style="background: #6B1FA8;"></div>
+        <div class="colour-info">
+          <div class="colour-name">Violet Accent</div>
+          <div class="colour-hex">#6B1FA8</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-group-label">Secondary - Lavender & Lilac</div>
+    <div class="colour-row">
+      <div class="colour-card">
+        <div class="colour-swatch" style="background: #C9A2D8;"></div>
+        <div class="colour-info">
+          <div class="colour-name">Lavender</div>
+          <div class="colour-hex">#C9A2D8</div>
+        </div>
+      </div>
+      <div class="colour-card">
+        <div class="colour-swatch" style="background: #B88CC8;"></div>
+        <div class="colour-info">
+          <div class="colour-name">Lilac</div>
+          <div class="colour-hex">#B88CC8</div>
+        </div>
+      </div>
+      <div class="colour-card">
+        <div class="colour-swatch" style="background: #9B6DB5;"></div>
+        <div class="colour-info">
+          <div class="colour-name">Purple Mid</div>
+          <div class="colour-hex">#9B6DB5</div>
+        </div>
+      </div>
+      <div class="colour-card">
+        <div class="colour-swatch" style="background: #E8D6F0;"></div>
+        <div class="colour-info">
+          <div class="colour-name">Lavender Light</div>
+          <div class="colour-hex">#E8D6F0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-group-label">Backgrounds & Packaging</div>
+    <div class="colour-row">
+      <div class="colour-card">
+        <div class="colour-swatch" style="background: #F3EDF5;"></div>
+        <div class="colour-info">
+          <div class="colour-name">Background Soft</div>
+          <div class="colour-hex">#F3EDF5</div>
+        </div>
+      </div>
+      <div class="colour-card">
+        <div class="colour-swatch" style="background: #F0D6EF;"></div>
+        <div class="colour-info">
+          <div class="colour-name">Pink Soft</div>
+          <div class="colour-hex">#F0D6EF</div>
+        </div>
+      </div>
+      <div class="colour-card">
+        <div class="colour-swatch" style="background: #E8C4E8;"></div>
+        <div class="colour-info">
+          <div class="colour-name">Pink Packaging</div>
+          <div class="colour-hex">#E8C4E8</div>
+        </div>
+      </div>
+      <div class="colour-card">
+        <div class="colour-swatch" style="background: #FFFFFF;"></div>
+        <div class="colour-info">
+          <div class="colour-name">White</div>
+          <div class="colour-hex">#FFFFFF</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-group-label">Text & Neutrals</div>
+    <div class="colour-row">
+      <div class="colour-card">
+        <div class="colour-swatch" style="background: #1A0A26;"></div>
+        <div class="colour-info">
+          <div class="colour-name">Text Dark</div>
+          <div class="colour-hex">#1A0A26</div>
+        </div>
+      </div>
+      <div class="colour-card">
+        <div class="colour-swatch" style="background: #4A2D5E;"></div>
+        <div class="colour-info">
+          <div class="colour-name">Text Mid</div>
+          <div class="colour-hex">#4A2D5E</div>
+        </div>
+      </div>
+      <div class="colour-card">
+        <div class="colour-swatch" style="background: #8A6FA0;"></div>
+        <div class="colour-info">
+          <div class="colour-name">Text Light</div>
+          <div class="colour-hex">#8A6FA0</div>
+        </div>
+      </div>
+      <div class="colour-card">
+        <div class="colour-swatch" style="background: #7A7078;"></div>
+        <div class="colour-info">
+          <div class="colour-name">Grey Warm</div>
+          <div class="colour-hex">#7A7078</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Typography -->
+  <div class="type-section">
+    <div class="section-title">Typography</div>
+
+    <div class="font-note">
+      <strong>Note:</strong> Sofia Pro is a licensed typeface from Mostardesign. This reference uses Sofia Sans (Google Fonts) as a close stand-in for web previews. Replace with Sofia Pro via your licensed @font-face files for production use.
+    </div>
+
+    <div class="type-card">
+
+      <!-- Weight Scale -->
+      <div class="type-specimen">
+        <div class="type-label">Weight Scale</div>
+        <div class="type-meta">Sofia Pro - Available Weights</div>
+        <div class="weight-scale">
+          <div class="weight-item">
+            <div class="weight-preview" style="font-weight: 200;">Ag</div>
+            <div class="weight-name">Light</div>
+            <div class="weight-value">200</div>
+          </div>
+          <div class="weight-item">
+            <div class="weight-preview" style="font-weight: 400;">Ag</div>
+            <div class="weight-name">Regular</div>
+            <div class="weight-value">400</div>
+          </div>
+          <div class="weight-item">
+            <div class="weight-preview" style="font-weight: 500;">Ag</div>
+            <div class="weight-name">Medium</div>
+            <div class="weight-value">500</div>
+          </div>
+          <div class="weight-item">
+            <div class="weight-preview" style="font-weight: 600;">Ag</div>
+            <div class="weight-name">Semi Bold</div>
+            <div class="weight-value">600</div>
+          </div>
+          <div class="weight-item">
+            <div class="weight-preview" style="font-weight: 700;">Ag</div>
+            <div class="weight-name">Bold</div>
+            <div class="weight-value">700</div>
+          </div>
+          <div class="weight-item">
+            <div class="weight-preview" style="font-weight: 800;">Ag</div>
+            <div class="weight-name">Extra Bold</div>
+            <div class="weight-value">800</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Type Scale -->
+      <div class="type-specimen">
+        <div class="type-label">Heading 1</div>
+        <div class="type-meta">Sofia Pro Extra Bold / 56px / Line Height 1.15</div>
+        <div class="type-display type-h1">Your Nails,<br>Your Rules</div>
+      </div>
+
+      <div class="type-specimen">
+        <div class="type-label">Heading 2</div>
+        <div class="type-meta">Sofia Pro Bold / 42px / Line Height 1.15</div>
+        <div class="type-display type-h2">Salon-Quality At Home</div>
+      </div>
+
+      <div class="type-specimen">
+        <div class="type-label">Heading 3</div>
+        <div class="type-meta">Sofia Pro Semi Bold / 28px / Line Height 1.2</div>
+        <div class="type-display type-h3">The Complete Dip System</div>
+      </div>
+
+      <div class="type-specimen">
+        <div class="type-label">Subheading</div>
+        <div class="type-meta">Sofia Pro Medium / 18px / Line Height 1.4</div>
+        <div class="type-display type-sub">Everything you need for a flawless dip powder manicure, from prep to finish.</div>
+      </div>
+
+      <div class="type-specimen">
+        <div class="type-label">Body</div>
+        <div class="type-meta">Sofia Pro Regular / 16px / Line Height 1.65</div>
+        <div class="type-display type-body">GLAMRDiP makes professional-grade dip powder nails accessible to everyone. Our formulas are vegan, cruelty-free, and designed to deliver long-lasting colour with a smooth, even finish every time.</div>
+      </div>
+
+      <div class="type-specimen">
+        <div class="type-label">Small / Caption</div>
+        <div class="type-meta">Sofia Pro Regular / 13px / Line Height 1.5</div>
+        <div class="type-display type-small">Free shipping on orders over $50 AUD. 30-day satisfaction guarantee.</div>
+      </div>
+
+      <div class="type-specimen">
+        <div class="type-label">Overline / Label</div>
+        <div class="type-meta">Sofia Pro Bold / 12px / Letter Spacing 3px / Uppercase</div>
+        <div class="type-display type-caps">New Collection Available Now</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Usage Notes -->
+  <div class="type-section">
+    <div class="section-title">Usage Notes</div>
+    <div class="usage-grid">
+      <div class="usage-card">
+        <h4>Headings</h4>
+        <p>Use Extra Bold (800) or Bold (700) for headings. Sentence case preferred for a modern, approachable feel. Keep line heights tight at 1.1 - 1.2.</p>
+      </div>
+      <div class="usage-card">
+        <h4>Body Copy</h4>
+        <p>Regular (400) for body text at 16px minimum. Use Text Mid (#4A2D5E) for softer readability on light backgrounds. Line height of 1.6 - 1.7 for comfortable reading.</p>
+      </div>
+      <div class="usage-card">
+        <h4>Product Labels</h4>
+        <p>Bold or Extra Bold in uppercase with generous letter spacing (2 - 4px). White text on purple backgrounds for maximum contrast, consistent with packaging.</p>
+      </div>
+      <div class="usage-card">
+        <h4>CTAs & Buttons</h4>
+        <p>Semi Bold (600) at 14 - 16px. Purple Brand (#7B4FA0) as primary button colour with white text. Use Purple Deep (#5E2D82) for hover states.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    GLAMRDiP Brand Reference - Colour & Typography - April 2026
+  </div>
+
+</div>
+
+</body>
+</html>
